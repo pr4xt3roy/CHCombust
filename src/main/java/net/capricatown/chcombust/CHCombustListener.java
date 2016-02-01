@@ -41,9 +41,6 @@ public class CHCombustListener implements Listener {
     public final void onEntityCombust(final EntityCombustEvent event) {
         CHCombustEvent chevent = new CHCombustEvent(event);
         EventUtils.TriggerListener(Driver.EXTENSION, "entity_combust", chevent);
-        if (chevent.isCancelled()) {
-            event.setCancelled(true);
-        }
     }
 
 }

@@ -2,7 +2,6 @@ package net.capricatown.chcombust.event;
 
 import org.bukkit.block.Block;
 import com.laytonsmith.core.events.BindableEvent;
-import org.bukkit.event.Cancellable;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.entity.EntityCombustEvent;
 import org.bukkit.event.entity.EntityCombustByEntityEvent;
@@ -13,7 +12,7 @@ import com.laytonsmith.abstraction.bukkit.BukkitMCLocation;
 /**
  * Wrapper around the bukkit Event.
  */
-public class CHCombustEvent implements BindableEvent, Cancellable {
+public class CHCombustEvent implements BindableEvent {
 
     /**
      * Bukkit Event object.
@@ -32,21 +31,6 @@ public class CHCombustEvent implements BindableEvent, Cancellable {
     @Override
     public final Object _GetObject() {
         return this.e;
-    }
-
-    /**
-     * Indicate if the event needs to be cancelled.
-     */
-    private boolean cancelled = false;
-
-    @Override
-    public final boolean isCancelled() {
-        return cancelled;
-    }
-
-    @Override
-    public final void setCancelled(final boolean arg0) {
-        cancelled = arg0;
     }
 
     /**
